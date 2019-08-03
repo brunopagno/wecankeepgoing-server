@@ -35,7 +35,7 @@ const app = express();
 app.use('/graphql', cors(), graphqlHTTP({
   schema,
   rootValue: root,
-  graphiql: true,
+  graphiql: process.env.NODE_ENV !== 'production',
 }));
 
 const port = process.env.PORT || 4000;
