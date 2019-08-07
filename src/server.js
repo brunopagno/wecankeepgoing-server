@@ -33,7 +33,7 @@ const root = {
 
 const app = express();
 app.use('/graphql', cors({
-  origin: process.env.UI_URL || 'http://localhost:4000',
+  origin: process.env.UI_URL || 'http://localhost:8080',
 }), graphqlHTTP({
   schema,
   rootValue: root,
